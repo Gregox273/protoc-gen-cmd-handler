@@ -1,0 +1,10 @@
+[project]
+name = "protoc-gen-cmd-handler"
+version = "0.1.0"
+description = "protoc plugin to generate a command dispatcher targeting embedded systems."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "nanopb>=0.4.9.3",
+    "protobuf>=7.36.2",
+]

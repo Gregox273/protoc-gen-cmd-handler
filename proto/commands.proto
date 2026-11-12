@@ -1,0 +1,33 @@
+
+syntax = "proto3";
+
+package device;
+
+message StartRequest {
+    bool immediate = 1;
+}
+
+message StopRequest {
+    uint32 reason = 1;
+}
+
+message SetSpeedRequest {
+    uint32 rpm = 1;
+}
+
+message CommandRequest {
+    uint32 sequence = 1;
+
+    oneof command {
+        StartRequest start = 10;
+        StopRequest stop = 11;
+        SetSpeedRequest set_speed = 12;
+    }
+}
+
+message CommandResponse {
+    uint32 sequence = 1;
+    bool success = 2;
+    string error = 3;
+}
+
